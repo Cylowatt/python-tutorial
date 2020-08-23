@@ -1,0 +1,74 @@
+def make_people():
+    # Creating from sequence.
+    people = list(('Paul', 'John', 'George'))
+
+    # Literal creation.
+    return ['Paul', 'John', 'George']
+
+
+def lists():
+    people = make_people()
+
+    people.append('Rodrigo')
+
+    # Membership.
+    isYoko = 'Yoko' in people
+
+    # Enumerate with index.
+    for i, name in enumerate(people):
+        print(f'{i} - {name}')
+
+        # Alternative syntax.
+        # print('{} - {}'.format(i, name))
+
+
+def indexing_and_slicing():
+    people = make_people()
+
+    first_element = people[0]
+
+    # Negatives start counting from the end, exclusive.
+    last_element = people[-1]
+
+    # Slicing works like in Go: [startIndex, endIndex).
+    second_person_as_list = people[1:2]
+
+    take_every_other_item = people[::2]
+    reverse_sequence = people[::-1]
+
+
+def list_operations():
+    list_1 = ['One', 'Two', 'Three']
+    list_2 = ['Four', 'Five', 'Six']
+
+    concatenation = list_1 + list_2
+
+    # Remove items by index.
+    del list_1[1]
+
+    # List equality.
+    equal = list_1 == list_2
+
+    # Compares items in lists from left.
+    greater_or_equal = list_1 >= list_2
+
+    # Iteration. Break out via break or skip via continue.
+    for item in list_1:
+        pass
+
+    list_length = len(list_1)
+
+    # Concatenate to self 10 times.
+    list_repetition = list_1 * 10
+
+    reversed_list = reversed(list_1)
+
+    # Includes a bunch of methods.
+
+    # Use else to indicate that every item was looped over,
+    # and break was never encountered.
+    for n in list_1:
+        if n == 'Four':
+            break
+    else:
+        print("No value Four in list!")
